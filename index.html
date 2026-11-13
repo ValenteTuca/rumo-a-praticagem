@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rumo à Praticagem · jornada PSCPP 2027</title>
+<meta name="description" content="Diário de bordo da preparação para o PSCPP 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23B8321C'/%3E%3Ctext x='16' y='24' font-size='22' text-anchor='middle' fill='%23FBF7EE'%3E%E8%88%AA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#mapa">Pular para o mapa</a>
+<div class="wrap">
+
+<header class="top">
+  <div class="brand">
+    <span class="seal" aria-hidden="true">航</span>
+    <div>
+      <span class="brand-name">Rumo à Praticagem</span>
+      <span class="mono small muted">Diário de bordo do Artur · PSCPP 2027</span>
+    </div>
+  </div>
+  <nav aria-label="Seções" class="nav">
+    <a href="#mapa" class="nav-on">Carta náutica</a>
+    <a href="#missao">Missão do dia</a>
+    <a href="#travessias">Travessias</a>
+    <a href="#radio">Rádio do porto</a>
+  </nav>
+  <div class="countdown"><span class="mono" id="daysLeft">0</span><span class="small muted">dias até a semana da prova</span></div>
+</header>
+
+<section class="hero" aria-label="Situação da viagem">
+  <div class="hero-cal" aria-hidden="true"><span>引航</span><small class="mono">PRATICAGEM</small></div>
+  <div class="hero-text">
+    <span class="mono small muted caps" id="weekLabel">SEMANA 1 DE 52</span>
+    <h1>Cada semana cumprida é uma milha mais perto do <em>Porto da Aprovação</em>.</h1>
+    <div class="progress-block">
+      <div class="row-between small muted"><span>Horas de estudo navegadas</span><span class="mono" id="hoursLabel">0 de 0 h</span></div>
+      <div class="bar"><div id="hoursBar"></div></div>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="small muted">Milhas ganhas</span><strong class="accent" id="miles">0</strong></div>
+    <div class="stat"><span class="small muted">Horas na semana</span><strong id="weekHours">0</strong></div>
+    <div class="stat"><span class="small muted">Último quiz</span><strong id="lastQuiz">—</strong><span class="small muted">meta 70%</span></div>
+    <div class="stat"><span class="small muted">Último simulado</span><strong id="lastSim">—</strong><span class="small muted">meta 75%</span></div>
+  </div>
+</section>
+
+<div class="split">
+  <section id="mapa" class="map-section" aria-label="Carta náutica das 52 semanas">
+    <div class="row-between">
+      <h2>Carta náutica · nov/2026 a nov/2027</h2>
+      <span class="small muted">Toca numa boia para abrir a carta da semana</span>
+    </div>
+    <div class="map" id="map">
+      <span class="map-sea" aria-hidden="true">海</span>
+      <svg viewBox="0 0 1000 560" aria-hidden="true" id="mapSvg">
+        <defs>
+          <filter id="ink" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="7"/></filter>
+          <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4E483F" stop-opacity="0.62"/><stop offset="1" stop-color="#4E483F" stop-opacity="0"/></linearGradient>
+          <linearGradient id="mist2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A8275" stop-opacity="0.5"/><stop offset="1" stop-color="#8A8275" stop-opacity="0"/></linearGradient>
+        </defs>
+        <circle cx="900" cy="96" r="58" fill="#B8321C"/>
+        <g filter="url(#ink)" class="drift">
+          <path d="M700 330 L704 150 Q716 96 734 140 L742 190 Q752 120 772 110 Q796 104 800 170 L806 230 Q818 150 842 160 Q860 170 862 240 L866 330 Z" fill="url(#mist2)"/>
+          <path d="M90 300 L96 130 Q108 70 128 120 L134 170 Q146 96 170 92 Q196 92 200 160 L204 300 Z" fill="url(#mist2)"/>
+        </g>
+        <g filter="url(#ink)">
+          <path d="M770 340 L776 120 Q790 50 812 100 L820 170 Q832 84 858 78 Q888 76 892 150 L898 220 Q912 140 940 150 Q966 160 968 240 L972 340 Z" fill="url(#mist)"/>
+          <path d="M150 320 L156 170 Q170 110 190 160 L196 210 Q210 150 232 150 Q256 152 258 220 L262 320 Z" fill="url(#mist)"/>
+          <path d="M430 300 L436 190 Q448 140 466 180 L470 220 Q482 170 500 172 Q520 176 522 230 L526 300 Z" fill="url(#mist2)"/>
+        </g>
+        <g fill="none" stroke="#17130F" stroke-width="2" stroke-linecap="round" opacity="0.28">
+          <path d="M70 410 q14 -10 28 0 t28 0 t28 0"/><path d="M300 150 q14 -10 28 0 t28 0"/><path d="M560 430 q14 -10 28 0 t28 0 t28 0"/><path d="M610 120 q14 -10 28 0 t28 0"/><path d="M340 440 q14 -10 28 0 t28 0"/><path d="M880 420 q14 -10 28 0 t28 0"/>
+        </g>
+        <path id="grass" fill="#17130F"/>
+        <path id="routeAll" fill="none" stroke="#8A8275" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round"/>
+        <path id="routeDone" fill="none" stroke="#17130F" stroke-width="8" stroke-linecap="round" filter="url(#ink)"/>
+      </svg>
+      <span class="region" style="left:3%;top:60%;color:#5E564A">BAÍA DA ARRANCADA</span>
+      <span class="region" style="left:24%;top:6%;color:#2F7D6B">MAR DA BASE</span>
+      <span class="region" style="left:40%;top:80%;color:#34508F">CANAL DO APROFUNDAMENTO</span>
+      <span class="region" style="left:56%;top:6%;color:#7A4FA3">ESTREITO DO EDITAL</span>
+      <span class="region" style="left:74%;top:80%;color:#7A5718">BARRA DA RETA FINAL</span>
+      <div class="port"><span class="port-seal" aria-hidden="true">合格</span><span class="port-name">Porto da Aprovação</span></div>
+      <div id="lighthouses"></div>
+      <div id="buoys"></div>
+      <div id="ship" class="ship" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="#F7F1E3" stroke="#B8321C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M12 10v4"/><path d="M12 2v3"/><path fill="none" d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+      </div>
+    </div>
+    <div class="legend small muted">
+      <span><i class="dot ring"></i>Semana a navegar</span>
+      <span><i class="dot fill"></i>Semana cumprida</span>
+      <span><i class="dot partial"></i>Semana parcial</span>
+      <span><i class="stroke"></i>Rota já navegada</span>
+      <span><svg width="12" height="16" viewBox="0 0 22 30" aria-hidden="true"><path d="M7 28 L9 10 H13 L15 28 Z" fill="#17130F"/><rect x="8" y="6" width="6" height="4" fill="#B8321C"/></svg>Farol: marco que não pode escapar</span>
+    </div>
+  </section>
+
+  <aside class="side">
+    <section class="card week-card" aria-label="Carta da semana">
+      <span class="watermark" aria-hidden="true" id="selChar">始</span>
+      <div class="row-between">
+        <span class="pill" id="selPhase">Arrancada</span>
+        <div class="row-gap">
+          <button type="button" class="icon-btn" id="prevWeek" aria-label="Semana anterior">‹</button>
+          <button type="button" class="icon-btn" id="nextWeek" aria-label="Próxima semana">›</button>
+        </div>
+      </div>
+      <div>
+        <h2 class="big" id="selTitle">Semana 1</h2>
+        <span class="mono small muted" id="selSub"></span>
+      </div>
+      <dl class="facts">
+        <dt>Principal</dt><dd class="strong" id="selP"></dd>
+        <dt>Secundária</dt><dd id="selS"></dd>
+        <dt>Teste</dt><dd id="selT"></dd>
+        <dt>Status</dt><dd><span class="status" id="selStatus">A fazer</span></dd>
+      </dl>
+    </section>
+
+    <section id="missao" class="card" aria-label="Missão do dia">
+      <div class="row-between">
+        <h2>Missão do dia</h2>
+        <span class="mono small accent" id="missionCount">0 de 0 · +10 milhas cada</span>
+      </div>
+      <div class="days" role="group" aria-label="Dia da semana" id="days"></div>
+      <div class="missions" id="missions"></div>
+      <div class="timer">
+        <div class="timer-info">
+          <span class="small" style="color:#D8CDB6">Cronômetro do bloco · alvo 1h30</span>
+          <span class="mono timer-text" id="timerText">00:00:00</span>
+          <div class="timer-bar"><div id="timerBar"></div></div>
+        </div>
+        <button type="button" class="btn-red" id="timerToggle">Iniciar</button>
+        <button type="button" class="btn-ghost" id="timerReset">Zerar</button>
+      </div>
+      <span class="small muted">O bloco da noite termina às 23h30. Bloco perdido não é reposto no dia seguinte.</span>
+    </section>
+  </aside>
+</div>
+
+<section id="travessias" aria-label="As cinco travessias" class="stack">
+  <h2>As cinco travessias</h2>
+  <div class="tabs" role="tablist" aria-label="Fases" id="phaseTabs"></div>
+  <div class="card phase-panel" role="tabpanel" id="phasePanel">
+    <div class="phase-char" aria-hidden="true"><span id="phChar"></span><small class="mono" id="phGloss"></small></div>
+    <div class="phase-body">
+      <span class="mono small muted" id="phMeta"></span>
+      <h3 id="phName"></h3>
+      <p id="phText"></p>
+    </div>
+    <div class="phase-gate">
+      <span class="small muted">Portão para seguir viagem</span>
+      <span class="strong" id="phGate"></span>
+      <button type="button" class="btn-outline" id="phGo">Ver no mapa</button>
+    </div>
+  </div>
+</section>
+
+<div class="grid3">
+  <section class="card" aria-label="Faróis">
+    <h2 class="h3">Faróis no caminho</h2>
+    <ol class="list" id="marcos"></ol>
+  </section>
+  <section class="card" aria-label="Tripulação, teste físico">
+    <h2 class="h3">Tripulação em forma · TSF</h2>
+    <div class="tsf" id="tsf"></div>
+    <span class="small muted">As barras enchem a cada teste mensal registrado em <code>data/tsf.json</code>.</span>
+  </section>
+  <section class="card" aria-label="Selos">
+    <h2 class="h3">Selos a conquistar</h2>
+    <div class="seals" id="seals"></div>
+    <span class="small muted">Cada selo ganha tinta vermelha quando o marco é cumprido.</span>
+  </section>
+</div>
+
+<section id="radio" class="radio" aria-label="Rádio do porto, notícias">
+  <span class="radio-tag">Rádio do porto</span>
+  <div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+</section>
+
+<footer class="foot small muted">
+  <span id="updated">Dados: data/semanas.json</span>
+  <span class="mono">27°35′S 48°32′W · Florianópolis</span>
+</footer>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

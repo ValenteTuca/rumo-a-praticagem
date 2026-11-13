@@ -1,0 +1,57 @@
+{
+ "marcos": [
+  {
+   "nome": "Entregar o TCC",
+   "quando": "18/11/2026",
+   "feito": false,
+   "selo": "文",
+   "selo_nome": "TCC entregue"
+  },
+  {
+   "nome": "Carteira de Arrais-Amador",
+   "quando": "jan/2027",
+   "feito": false,
+   "selo": "舟",
+   "selo_nome": "Arrais-Amador"
+  },
+  {
+   "nome": "Decidir o cursinho",
+   "quando": "31/01/2027",
+   "feito": false
+  },
+  {
+   "nome": "Carteira de Mestre-Amador",
+   "quando": "abr–mai/2027",
+   "feito": false,
+   "selo": "船",
+   "selo_nome": "Mestre-Amador"
+  },
+  {
+   "nome": "Edital publicado",
+   "quando": "jul/2027",
+   "feito": false
+  },
+  {
+   "nome": "Prova escrita",
+   "quando": "nov/2027",
+   "feito": false
+  }
+ ],
+ "selos_extras": [
+  {
+   "selo": "百",
+   "nome": "100 horas",
+   "regra": "horas>=100"
+  },
+  {
+   "selo": "力",
+   "nome": "TSF com folga",
+   "feito": false
+  },
+  {
+   "selo": "言",
+   "nome": "Oral em inglês",
+   "feito": false
+  }
+ ]
+}
